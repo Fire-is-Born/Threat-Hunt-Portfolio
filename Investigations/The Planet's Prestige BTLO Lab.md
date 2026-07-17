@@ -38,17 +38,8 @@ The email body was Base64 encoded, so I used **CyberChef** to decode it.
 
 The decoded message read:
 
-> Hi TheMajorOnEarth,
->
-> The abducted CoCanDians are with me including the President's daughter. Don't worry. They are safe in a secret location.
->
-> Send me 1 Billion CoCanDs in cash with a spaceship and my autonomous bots will safely bring back your citizens.
->
-> I heard that CoCanDians have the best brains in the Universe. Solve the puzzle I sent as an attachment for the next steps.
->
-> My advice for the puzzle is:
->
-> **"Don't Trust Your Eyes"**
+<img width="1019" height="278" alt="image" src="https://github.com/user-attachments/assets/0fe8988c-76da-4cf2-8fe6-03e70c3bb0a0" />
+
 
 ---
 
@@ -85,6 +76,7 @@ Two of the files had no extension, so I used **HxD** to identify their true file
 The first file was identified as a **JPEG** image showing a crown.
 
 
+<img width="1883" height="892" alt="image" src="https://github.com/user-attachments/assets/c36b44e1-0e69-456e-b719-6444d9c18eeb" />
 
 
 
@@ -96,6 +88,10 @@ The second file was identified as a **PDF**, which contained the following messa
 >
 > Location to send **1 Billion CoCanDs** is in **Money.xlsx**.
 
+<img width="846" height="548" alt="image" src="https://github.com/user-attachments/assets/fbf90bf5-0eff-481a-9d40-419d181c6a09" />
+
+
+
 The third file was confirmed to be an **Excel workbook** after verifying its file signature.
 
 ---
@@ -103,6 +99,9 @@ The third file was confirmed to be an **Excel workbook** after verifying its fil
 ### 5. Hidden Data Discovery
 
 Opening the workbook initially revealed a message claiming the ransom demand was fake and that a war with the CoCanDians had begun.
+
+<img width="851" height="660" alt="image" src="https://github.com/user-attachments/assets/5cc77d29-5b0d-430e-8c61-8faf525c61c2" />
+
 
 I noticed the workbook contained a second worksheet that appeared empty. Rather than assuming it contained no data, I highlighted the worksheet and selected **Clear → Formats**.
 
@@ -124,10 +123,6 @@ I decoded the string using **CyberChef**, which revealed the final hidden locati
 |-----------|-------|
 | **Sender** | billjobs@microapple.com |
 | **Reply-To** | negeja3921@pashter.com |
-| **Recipient** | themajoronearth@gmail.com |
-| **Sending IP** | 93.99.104.210 |
-| **Sending Host** | emkei.cz |
-| **Subject** | A Hope to CoCanDa |
 | **SPF** | Failed |
 
 ---
@@ -136,9 +131,8 @@ I decoded the string using **CyberChef**, which revealed the final hidden locati
 
 - CyberChef
 - HxD
-- Microsoft Excel
-- Email Header Analysis
-- Base64 Decoding
+- OnlyOffice
+- Email Header Analysis (NotePad++)
 
 ---
 
@@ -146,9 +140,13 @@ I decoded the string using **CyberChef**, which revealed the final hidden locati
 
 Based on my findings, I would recommend:
 
-- Investigating emails that fail SPF authentication, particularly when combined with other indicators of spoofing.
-- Comparing the **From** and **Reply-To** addresses during email analysis, as mismatches are a common phishing technique.
-- Verifying attachment file types by checking their file signatures rather than relying on filenames or MIME types.
-- Analysing suspicious attachments in an isolated environment before opening them.
-- Searching the environment for similar emails using the sender, subject, sending IP address or Message-ID to determine whether additional users received the same message.
-- Continuing user awareness training to help users recognise phishing attempts involving spoofed senders and disguised attachments.
+## Recommendations
+
+Based on what I found during this investigation, I would recommend:
+
+- Investigating any email that fails SPF authentication, especially when it's combined with other indicators such as mismatched sender information.
+- Always comparing the **From** and **Reply-To** addresses, as this investigation showed how they can be used to redirect replies to a different mailbox.
+- Verifying the true file type of attachments by checking their file signatures instead of relying on the filename or MIME type, as the attachment in this case was disguised as a PDF.
+- Opening suspicious attachments in an isolated environment to reduce the risk of executing malicious content.
+- Searching the environment for similar emails using the sender address, subject, sending IP or Message-ID to identify whether additional users may have been targeted.
+- Continuing user awareness training so users are better equipped to recognise spoofed emails and suspicious attachments.
