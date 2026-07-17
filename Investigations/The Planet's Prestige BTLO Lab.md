@@ -82,11 +82,6 @@ The first file was identified as a **JPEG** image showing a crown.
 
 The second file was identified as a **PDF**, which contained the following message:
 
-> CoCanDians are Safe.
->
-> The proof is in the file named **DaughtersCrown**.
->
-> Location to send **1 Billion CoCanDs** is in **Money.xlsx**.
 
 <img width="846" height="548" alt="image" src="https://github.com/user-attachments/assets/fbf90bf5-0eff-481a-9d40-419d181c6a09" />
 
